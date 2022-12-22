@@ -1,0 +1,21 @@
+# kubeadm-config.yaml
+#kind: MasterConfiguration
+#apiVersion: kubeadm.k8s.io/v1beta3
+#kubeletConfiguration:
+#  allowSwap: true
+#---
+kind: InitConfiguration
+apiVersion: kubeadm.k8s.io/v1beta3
+nodeRegistration:
+  #criSocket: "unix:///var/run/cri-dockerd.sock"
+  criSocket: "unix:///var/run/containerd/containerd.sock"
+---
+kind: ClusterConfiguration
+apiVersion: kubeadm.k8s.io/v1beta3
+networking:
+  podSubnet: "172.17.0.1/16" # --pod-network-cidr
+---
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+cgroupDriver: systemd
+#cgroupDriver: cgroupfs
