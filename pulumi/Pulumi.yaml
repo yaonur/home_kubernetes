@@ -1,0 +1,6 @@
+name: pulum
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: home_cluster
