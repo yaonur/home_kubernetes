@@ -42,7 +42,7 @@ result = None
 if is_minikube:
     result = frontend.spec.apply(lambda v: v["cluster_ip"] if "cluster_ip" in v else None)
 else:
-    ingress = frontend.status.apply(lambda v: v["load_balancer"]["ingress"][0] if "load_balancer" in v else None)
+    ingress = frontend.status.apply(lambda v: v["node_port"]["ingress"][0] if "node_port" in v else None)
     if ingress is not None:
         result = ingress.apply(lambda v: v["ip"] if "ip" in v else v["hostname"])
 
