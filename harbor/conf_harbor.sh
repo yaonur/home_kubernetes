@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -rf harbor.yml ~/harbor
+cp -rf harbor.yml /home/so2/harbor
