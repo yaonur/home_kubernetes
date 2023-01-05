@@ -16,5 +16,5 @@ spec:
     spec:
       containers:
         - name: registry-test-container
-          image: docker_registry_test
+          image: reg.so2harbor.com/registry-test:latest
 
