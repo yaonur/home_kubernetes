@@ -1,0 +1,13 @@
+/.idea/.gitignore
+/pulumi/.gitignore
+/webapp_test/.gitignore
+/terraform/.terraform.lock.hcl
+/.idea/highlightedFiles.xml
+/.idea/home_kubernetes.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/terraform/terraform.tfstate
+/terraform/.terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.16.1/linux_amd64/terraform-provider-kubernetes_v2.16.1_x5
+/.idea/vcs.xml
