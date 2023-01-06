@@ -16,5 +16,7 @@ spec:
     spec:
       containers:
         - name: registry-test-container
-          image: reg.so2harbor.com/registry-test:latest
+          image: reg.so2harbor.com/library/docker_registry_test:latest
+      imagePullSecrets:
+        - name: regcred
 
