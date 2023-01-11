@@ -1,0 +1,71 @@
+#-------Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi
+  labels:
+    app: fastapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+        - name: fastapicontainer
+          image: so2harbor.com:6000/library/fastapi:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: USER_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: fastapi-secret
+                  key: postgres-user
+            - name: USER_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: fastapi-secret
+                  key: postgres-password
+            - name: POSTGRES_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: fastapi-config
+                  key: postgres-url
+#-----------------Secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+spec:
+  type: NodePort
+  selector:
+    app: fastapi
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30100
+#----------------------Confmap
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fastapi-config
+data:
+  postgres-url: postgres-service
+---
+#--------------------Secret
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fastapi-secret
+type: Opaque
+data:
+  postgres-user: YWRtaW4=
+  postgres-password: YWRtaW4xMjM=
