@@ -1,3 +1,4 @@
+#----------------Config Map
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -9,6 +10,7 @@ data:
   POSTGRES_USER: admin
   POSTGRES_PASSWORD: admin123
 ---
+#----------------Stateful Set
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -41,6 +43,7 @@ spec:
           persistentVolumeClaim:
             claimName: postgres-claim
 ---
+#--------------------Service
 apiVersion: v1
 kind: Service
 
