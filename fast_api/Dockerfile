@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.12.0a4-slim-buster
+FROM python:3.12.0-slim-buster
 
 # create directory for the app user
 RUN mkdir -p /home/app
