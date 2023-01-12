@@ -14,7 +14,6 @@ spec:
         path: "/"
         backend:
           service:
-
             name: webapp-service
             port:
               number: 80
