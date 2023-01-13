@@ -37,7 +37,7 @@ spec:
                   name: fastapi-config
                   key: postgres-url
             - name: DB_URL_POSTGRES
-              value: postgresql://$(USER_NAME):$(USER_PWD)@localhost:5432/blog
+              value: postgresql://$(USER_NAME):$(USER_PWD)@postgres-service:5432/blog
 #-----------------Secret
 ---
 apiVersion: v1

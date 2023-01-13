@@ -7,16 +7,16 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: band.so2homelab.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: webapp-service
-            port:
-              number: 80
+    - host: band.so2homelab.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: webapp-service
+                port:
+                  number: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -28,13 +28,33 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: api.so2homelab.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: fastapi-service
-            port:
-              number: 5000
+    - host: api.so2homelab.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: fastapi-service
+                port:
+                  number: 5000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: postgresql-ingres
+#  annotations:
+#    kubernetes.io/ingress.class: nginx
+#spec:
+#  ingressClassName: nginx
+#  rules:
+#    - host: postgre.so2homelab.com
+#      http:
+#        paths:
+#          - pathType: Prefix
+#            path: "/"
+#            backend:
+#              service:
+#                name: postgres-service
+#                port:
+#                  number: 5432
