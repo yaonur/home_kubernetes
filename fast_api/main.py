@@ -1,10 +1,10 @@
 from typing import Optional
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-import crud
+from db import crud
 from schemas import BlogSchema
-import model
-from config import engine, get_db
+from db import model
+from db.config import engine, get_db
 
 model.Base.metadata.create_all(bind=engine)
 

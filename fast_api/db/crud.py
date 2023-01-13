@@ -1,6 +1,6 @@
 from typing import Callable, List, Any
 from sqlalchemy.orm import Session
-from model import Blog
+from .model import Blog
 from schemas import BlogSchema
 
 
