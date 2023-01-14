@@ -13,7 +13,7 @@ def get_blog_by_id(db: Session, blog_id: int) -> Blog:
 
 
 def create_blog(db: Session, blog: BlogSchema) -> Blog:
-    _blog = Blog(title=blog.title, body=blog.body, published=blog.published)
+    _blog = Blog(blog)
     db.add(_blog)
     db.commit()
     db.refresh(_blog)
