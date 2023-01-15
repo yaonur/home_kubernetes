@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name : uninstall apache2 package
+    apt:
+      name: apache2
+      state: absent
+    when: ansible_distribution in ["Debian", "Ubuntu"]
+  - name : uninstall php support for apache2
+    apt:
+      name: libapache2-mod-php
+      state: absent
+    when: ansible_distribution in ["Debian", "Ubuntu"]
+
