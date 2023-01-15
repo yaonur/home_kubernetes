@@ -19,17 +19,17 @@
     when: ansible_distribution in ["Debian", "Ubuntu"]
 # for centos
 - name: update repository index for centos
-    apt:
+    dnf:
       update_cache: yes
 #     when: ansible_distribution == "Ubuntu"
     when: ansible_distribution == "CentOS"
   - name : install apache2 package on Centos
-    apt:
+    dnf:
       name: httpd
       state: latest
     when: ansible_distribution == "CentOS"
   - name : install php support for apache2 on Centos
-    apt:
+    dnf:
       name: phd
       state: latest
     when: ansible_distribution == "CentOS"
