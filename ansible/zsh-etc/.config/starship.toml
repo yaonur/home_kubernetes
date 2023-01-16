@@ -1,0 +1,18 @@
+[kubernetes]
+#format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+format = 'on [⛵ ($cluster in ) \($namespace\)](bold green) '
+disabled = false
+[gcloud]
+disabled= true
+[aws]
+disabled= true
+[directory]
+truncation_length = 8
+truncation_symbol = '../'
+truncate_to_repo = false
+[python]
+symbol = '𓆙  '
+pyenv_version_name = true
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '

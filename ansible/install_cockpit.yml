@@ -1,0 +1,17 @@
+---
+- hosts: kubernetes_servers
+  become: true
+  tasks:
+  - name: install updates
+    apt:
+        upgrade: dist
+        update_cache: yes
+    when: ansible_distribution in ["Debian","Ubuntu"]
+
+  - name : install cockpit running on 9090
+    apt:
+      name:
+        - cockpit
+      state: latest
+      update_cache: yes
+    when: ansible_distribution in ["Debian", "Ubuntu"]

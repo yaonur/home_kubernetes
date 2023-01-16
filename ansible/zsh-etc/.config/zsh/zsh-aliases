@@ -1,0 +1,143 @@
+#!/bin/sh
+alias j='z'
+alias f='zi'
+alias g='lazygit'
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+alias nvimrc='nvim ~/.config/nvim/'
+
+# alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
+
+# get fastest mirrors
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+# Remarkable
+alias remarkable_ssh='ssh root@10.11.99.1'
+alias restream='restream -p'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+# get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4 | head -5'
+
+# get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3 | head -5'
+
+# gpg encryption
+# verify signature for isos
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+# receive the key of a developer
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+
+# For when keys break
+alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+
+# systemd
+alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
+
+alias mach_java_mode="export SDKMAN_DIR="$HOME/.sdkman" && [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh""
+
+alias m="git checkout master"
+alias s="git checkout stable"
+#my alias
+alias myip='curl ipinfo.io/ip'
+
+
+#alias bastion='ssh root@bastionx.ebrandvalue.com'
+alias bastion="sudo ssh  -i ~/Documents/ebrand/eBrandValueTerraform/terraform/k8s-clusters/aws-engagecxm/aws_engage.pem  ec2-user@ec2-16-16-28-50.eu-north-1.compute.amazonaws.com"
+alias bastion_direct="cd ~/Documents/ebrand/eBrandValueTerraform/terraform/k8s-clusters/aws-engagecxm/aws_engage.pem && sudo ssh  -i aws_engage.pem  ec2-user@ec2-16-16-28-50.eu-north-1.compute.amazonaws.com"
+alias manage='python manage.py'
+alias com='manage scrape_comments --codes'
+alias com_manuel='manage scrape_comments_manuel --codes'
+alias comp='manage scrape_comments_proxy --codes'
+alias post='manage scrape_post_bot'
+alias media='manage scrape_media'
+alias context_home="kubectl config use-context kubernetes-admin@kubernetes"
+alias context_ebrand="kubectl config use-context arn:aws:eks:eu-north-1:541913993255:cluster/engagecxm"
+alias k="kubectl"
+alias ns="kubectl config set-context --current --namespace="
+alias ns_metal="kubectl config set-context --current --namespace=metallb-system"
+alias ns_ingress="kubectl config set-context --current --namespace=ingress-nginx"
+alias kube="kubectl -n collector-tr"
+alias kubec="kubectl -n cxm"
+alias kubeo="kubectl -n other-services"
+alias pods='kube get pods |grep'
+alias podsc='kubec get pods |grep'
+alias deployment='kube get deployment |grep'
+alias cj='kube get cj |grep'
+alias editcj='kube edit cj'
+alias config='kube get configmap |grep'
+alias gh='history|grep'
+alias vpn="sudo openvpn --data-ciphers AES-256-GCM:AES-128-GCM:BF-CBC --config onur.ovpn"
+alias starinit='eval "$(starship init zsh)"'
+alias remap="./remaplaptop.sh"
+alias vim ="nvim"
+alias portcxm="kubectl -n cxm port-forward"
+alias portcollector="kubectl -n collector-tr port-forward"
+alias rp='./publish_igpost_raw.sh'
+alias rs='./publish_igstory_raw.sh'
+alias rc='./publish_igcomment_raw.sh'
+alias rcp='./publish_ig_comments_from_post.sh'
+alias convert_cm='/home/ynr/python/ebv_helpers/ebv_helpers/convert_conf.sh'
+
+
+alias freecad='freecad-ppd.freecad'
+alias f_rabbit="kube port-forward service/rabbitmq-prod 5673:5672 15673:15672"
+alias f_primary="kube port-forward service/mongo-primary 27018:27017"
+alias f_cold="kube port-forward service/mongo-cold 27019:27017"
+alias f_redis="kubeo port-forward service/redis-master 6379:6379"
+alias f_postgres="kubeo port-forward service/website-postgres-nodeport 5432:5432"
+alias f_rabbit_cxm="kubec port-forward service/rabbitmq 5674:5672 15674:15672"
+alias f_rabbit_cxm_api="kubec port-forward service/rabbitmq-cxm 15674:15672"
+alias f_elastic_cxm="kubec port-forward deployments/elasticsearch-client 9201:9200"
+alias f_postgres_cxm="kubec port-forward deployments/postgres 5432:5432"
+alias f_redis_cxm="kubec port-forward service/redis-cxm 6380:6379"
+alias f_sql="kubectl -n alcohol-tr port-forward service/mysql 3306:3306"
+
+alias wgup="wg-quick up onur.key"
+alias wgdown="wg-quick down onur.key"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias degit='npm degit'
+alias degitx='npx degit'
+alias docker='sudo docker'
+alias cisco='packettracer'
+
+#alias python='/usr/bin/python3'
+
+
+
+#alias catconf='configview'
+#alias logs='logs'
+
+case "$(uname -s)" in
+
+Darwin)
+	# echo 'Mac OS X'
+	alias ls='ls -G'
+	;;
+
+Linux)
+	alias ls='ls --color=auto'
+	;;
+
+CYGWIN* | MINGW32* | MSYS* | MINGW*)
+	# echo 'MS Windows'
+	;;
+*)
+	# echo 'Other OS'
+	;;
+esac

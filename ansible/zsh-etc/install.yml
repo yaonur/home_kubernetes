@@ -1,0 +1,44 @@
+---
+- hosts: kubernetes_servers
+  become: true
+  tasks:
+  - name: install updates
+    apt:
+        upgrade: dist
+        update_cache: yes
+  - name : install zsh
+    apt:
+      name:
+        - zsh
+      state: latest
+      update_cache: yes
+  - name : install xclip zoxide thefuck
+    apt:
+      name:
+        - xclip
+        - zoxide
+        - thefuck
+        - ranger
+      state: latest
+      update_cache: yes
+  - name: copy .zshrc for setup
+    copy:
+      src: .zshrc
+      dest: /home/so2/
+      owner: so2
+      group: so2
+      mode: 777
+  - name: copy config files
+    copy:
+      src: .config
+      dest: /home/so2/
+      owner: so2
+      group: so2
+      mode: 777
+  - name: make zsh default shell
+    user:
+      name: "so2"
+      shell: /bin/zsh
+#   - name: install starship
+#     shell: curl -sS https://starship.rs/install.sh | sh
+
