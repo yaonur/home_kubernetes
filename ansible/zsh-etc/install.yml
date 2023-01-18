@@ -21,9 +21,9 @@
         - ranger
       state: latest
       update_cache: yes
-  - name: copy .zshrc for setup
+  - name: copy .zshenv for setup
     copy:
-      src: .zshrc
+      src: .zshenv
       dest: /home/so2/
       owner: so2
       group: so2

@@ -1,7 +1,7 @@
 #!/bin/sh
-alias j='z'
-alias f='zi'
 alias g='lazygit'
+alias v="nvim"
+alias f='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
 
@@ -57,41 +57,25 @@ alias s="git checkout stable"
 alias myip='curl ipinfo.io/ip'
 
 
-#alias bastion='ssh root@bastionx.ebrandvalue.com'
-alias bastion="sudo ssh  -i ~/Documents/ebrand/eBrandValueTerraform/terraform/k8s-clusters/aws-engagecxm/aws_engage.pem  ec2-user@ec2-16-16-28-50.eu-north-1.compute.amazonaws.com"
-alias bastion_direct="cd ~/Documents/ebrand/eBrandValueTerraform/terraform/k8s-clusters/aws-engagecxm/aws_engage.pem && sudo ssh  -i aws_engage.pem  ec2-user@ec2-16-16-28-50.eu-north-1.compute.amazonaws.com"
-alias manage='python manage.py'
-alias com='manage scrape_comments --codes'
-alias com_manuel='manage scrape_comments_manuel --codes'
-alias comp='manage scrape_comments_proxy --codes'
-alias post='manage scrape_post_bot'
-alias media='manage scrape_media'
+
+
 alias context_home="kubectl config use-context kubernetes-admin@kubernetes"
-alias context_ebrand="kubectl config use-context arn:aws:eks:eu-north-1:541913993255:cluster/engagecxm"
-alias k="kubectl"
+alias alias k="kubectl"
 alias ns="kubectl config set-context --current --namespace="
 alias ns_metal="kubectl config set-context --current --namespace=metallb-system"
 alias ns_ingress="kubectl config set-context --current --namespace=ingress-nginx"
 alias kube="kubectl -n collector-tr"
 alias kubec="kubectl -n cxm"
 alias kubeo="kubectl -n other-services"
-alias pods='kube get pods |grep'
-alias podsc='kubec get pods |grep'
-alias deployment='kube get deployment |grep'
-alias cj='kube get cj |grep'
-alias editcj='kube edit cj'
-alias config='kube get configmap |grep'
+alias pods='k get pods |grep'
+alias deployment='k get deployment |grep'
+alias cj='k get cj |grep'
+alias editcj='k edit cj'
+alias config='k get configmap |grep'
 alias gh='history|grep'
-alias vpn="sudo openvpn --data-ciphers AES-256-GCM:AES-128-GCM:BF-CBC --config onur.ovpn"
 alias starinit='eval "$(starship init zsh)"'
 alias remap="./remaplaptop.sh"
-#alias vim ="nvim"
-alias portcxm="kubectl -n cxm port-forward"
-alias portcollector="kubectl -n collector-tr port-forward"
-alias rp='./publish_igpost_raw.sh'
-alias rs='./publish_igstory_raw.sh'
-alias rc='./publish_igcomment_raw.sh'
-alias rcp='./publish_ig_comments_from_post.sh'
+alias portcxm="k port-forward"
 alias convert_cm='/home/ynr/python/ebv_helpers/ebv_helpers/convert_conf.sh'
 
 
@@ -110,7 +94,7 @@ alias f_sql="kubectl -n alcohol-tr port-forward service/mysql 3306:3306"
 
 alias wgup="wg-quick up onur.key"
 alias wgdown="wg-quick down onur.key"
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
 alias degit='npm degit'
 alias degitx='npx degit'
 alias docker='sudo docker'

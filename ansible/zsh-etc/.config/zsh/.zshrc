@@ -1,5 +1,5 @@
 #!/bin/sh
-export ZDOTDIR=$HOME/.config/zsh
+#export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
 
@@ -28,6 +28,7 @@ zle -N down-line-or-beginning-search
 
 # Colors
 autoload -Uz colors && colors
+autoload -U promptinit && promptinit
 
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
@@ -91,7 +92,7 @@ autoload edit-command-line; zle -N edit-command-line
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-#export TERMINAL="alacritty"
+#export TERMINAL="terminator"
 #export BROWSER="brave"
 
 # For QT Themes
@@ -103,33 +104,25 @@ export EDITOR="nvim"
 # setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
+#brew llvm
+export PATH=/home/linuxbrew/.linuxbrew/opt/llvm/bin:$PATH
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$HOME/.pulumi/bin
+export KUBECONFIG=$HOME/.kube/config
 
 eval "$(starship init zsh)"
+eval $(thefuck --alias)
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+
 
 
 
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ynr/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/ynr/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/ynr/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/ynr/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# add Pulumi to the PATH
-export PATH=$PATH:$HOME/.pulumi/bin
