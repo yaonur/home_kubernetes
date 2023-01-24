@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -t so2harbor.com:6000/library/portfolio:latest --network=host .
-docker push  so2harbor.com:6000/library/portfolio:latest
+sudo docker build -t so2harbor.com:6000/library/portfolio:latest --network=host .
+sudo docker push  so2harbor.com:6000/library/portfolio:latest
