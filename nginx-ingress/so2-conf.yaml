@@ -21,7 +21,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-api
+  name: ingress-band
 #  annotations:
 #    kubernetes.io/ingress.class: ingress-nginx
 spec:
@@ -58,11 +58,11 @@ spec:
                 name: fastapi-service
                 port:
                   number: 5000
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: postgresql-ingres
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: postgresql-ingres
 #  annotations:
 #    kubernetes.io/ingress.class: nginx
 #spec:
