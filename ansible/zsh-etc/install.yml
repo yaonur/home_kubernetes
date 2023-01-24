@@ -12,7 +12,7 @@
         - zsh
       state: latest
       update_cache: yes
-  - name : install xclip zoxide thefuck
+  - name : install xclip zoxide thefuck fzf
     apt:
       name:
         - xclip
