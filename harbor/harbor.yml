@@ -14,8 +14,8 @@ https:
   # https port for harbor, default is 443
   port: 6000
   # The path of cert and key files for nginx
-  certificate: /data/cert/so2harbor.com.crt
-  private_key: /data/cert/so2harbor.com.key
+  certificate: /data/cert/so2homelab.com/cert.pem
+  private_key: /data/cert/so2homelab.com/privkey.pem
 
 
 
