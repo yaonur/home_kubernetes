@@ -7,6 +7,7 @@
 	import About from "./routes/About.svelte";
 	import Projects from "./routes/Projects.svelte";
 	import Contact from "./routes/Contact.svelte";
+	import Success from "./routes/Success.svelte";
 	
 	let closed = true
 	
@@ -40,6 +41,7 @@
 		<Route path="about" component={About}/>
 		<Route path="projects" component={Projects}/>
 		<Route path="contact" component={Contact}/>
+		<Route path="success" component="{Success}"/>
 	</div>
 </Router>
 
@@ -49,6 +51,8 @@
 		position: fixed;
 		top: 0;
 		left: 300px;
+		width: 100%;
+		height: 100%;
 	}
 	
 	.pageClosed {
