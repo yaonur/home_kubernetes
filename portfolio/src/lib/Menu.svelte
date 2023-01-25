@@ -1,28 +1,28 @@
 <script>
 	import {link} from "svelte-navigator";
 </script>
-<div class="menu-bar" >
-	<div class="menu">
-		<ul class="menu-links">
-			<li class="nav-link">
+<div  >
+	<div >
+		<ul >
+			<li >
 				<a href="/" use:link>
 					<i class='bx bx-home-alt'></i>
 					<span>Home</span>
 				</a>
 			</li>
-			<li class="nav-link">
+			<li >
 				<a href="about" use:link>
 					<i class='bx bx-user'></i>
 					<span>About</span>
 				</a>
 			</li>
-			<li class="nav-link">
+			<li >
 				<a href="projects" use:link>
 					<i class='bx bx-briefcase'></i>
 					<span>Projects</span>
 				</a>
 			</li>
-			<li class="nav-link">
+			<li >
 				<a href="contact" use:link>
 					<i class='bx bx-user-pin'></i>
 					<span>Contact</span>
