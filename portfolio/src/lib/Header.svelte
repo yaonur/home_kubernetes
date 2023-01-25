@@ -1,6 +1,5 @@
 <script>
 	import svelteLogo from '../assets/svelte.svg';
-	import rightArrow from '../assets/right-arrow-regular-24.png'
 </script>
 <header>
 	<div class="image-text">
@@ -8,13 +7,11 @@
 						<img src="{svelteLogo}" alt="svLogo">
 					</span>
 		<div class="text header-text">
-			<span class="name">Svelte</span>
-			<span class="kind">SPA app</span>
+			<span class="name">Powered by</span>
+			<span class="kind">svelte SPA!!!</span>
 		</div>
 	</div>
-	<div class="arrow-background">
-		<i class='bx bx-chevrons-right' ></i>
-	</div>
+	
 </header>
 
 <style>
@@ -54,25 +51,10 @@
 	}
 	
 	.kind {
-		margin-top: -2px;
+		/*margin-top: -2px;*/
 	}
 	
 	
-	 i {
-		position: absolute;
-		top: 50%;
-		right: -25px;
-		transform: translateY(-50%);
-		 font-size: 22px;
-		/*height: 20px;*/
-		/*width: 20px;*/
-		 padding: 4px;
-		background: var(--primary-color);
-		 opacity: 90%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-	}
+	
 
 </style>

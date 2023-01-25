@@ -1,9 +1,7 @@
 <script>
-	import {Router, Link, link, Route} from "svelte-navigator";
-	
-	import HomeLogo from "../assets/home.svg"
+	import {link} from "svelte-navigator";
 </script>
-<div class="menu-bar">
+<div class="menu-bar" >
 	<div class="menu">
 		<ul class="menu-links">
 			<li class="nav-link">
@@ -20,7 +18,7 @@
 			</li>
 			<li class="nav-link">
 				<a href="projects" use:link>
-					<i class='bx bx-briefcase' ></i>
+					<i class='bx bx-briefcase'></i>
 					<span>Projects</span>
 				</a>
 			</li>
@@ -72,9 +70,15 @@
 		
 	}
 	
+	i {
+		margin-left: 8px;
+	}
+	span{
+		margin-left: 25px;
+	}
+	
 	
 	span, i {
-		margin-left: 15px;
 		font-size: 25px;
 		font-weight: 700;
 		color: var(--text-color);
