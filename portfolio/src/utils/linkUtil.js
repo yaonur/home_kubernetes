@@ -5,10 +5,10 @@ export const navbarData = {
     logoSrc: svelteLogo,
     logoLink: true,
     linkUrl: '#/',
-    optionalLinkText: 'svelte spa',
+    optionalLinkText: 'velte spa',
     altText: 'Logo',
     links: [
-        {url: '#/', displayInNav: true, displayInFooter: true, linkText: 'Home'},
+        {url: '#/Home', displayInNav: true, displayInFooter: true, linkText: 'Home'},
         {url: '#/About', displayInNav: true, displayInFooter: true, linkText: 'About'},
         {url: '#/Contact', displayInNav: true, displayInFooter: true, linkText: 'Contact'},
         {url: '#/Projects', displayInNav: true, displayInFooter: true, linkText: 'Projects'},
