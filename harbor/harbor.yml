@@ -28,7 +28,7 @@ https:
 
 # Uncomment external_url if you want to enable external proxy
 # And when it enabled the hostname will no longer used
-external_url: https://reg.so2homelab.com:6000
+external_url: reg.so2homelab.com
 
 # The initial password of Harbor admin
 # It only works in first time to install harbor
