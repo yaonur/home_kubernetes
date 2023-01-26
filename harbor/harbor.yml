@@ -9,13 +9,13 @@ http:
   # port for http, default is 80. If https enabled, this port will redirect to https port
   port: 6080
 
-# https related config
-# https:
-#   # https port for harbor, default is 443
-#   port: 6000
-#   # The path of cert and key files for nginx
-#   certificate: /data/cert/so2homelab.com/so2homelab.com.cert
-#   private_key: /data/cert/so2homelab.com/so2homelab.com.key
+https related config
+https:
+  # https port for harbor, default is 443
+  port: 6000
+  # The path of cert and key files for nginx
+  certificate: /data/cert/cert.crt
+  private_key: /data/cert/cert.key
 
 
 

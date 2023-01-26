@@ -1,5 +1,6 @@
 version: '2.3'
 services:
+
   log:
     image: goharbor/harbor-log:v2.6.3
     container_name: harbor-log
@@ -23,6 +24,7 @@ services:
       - 127.0.0.1:1514:10514
     networks:
       - harbor
+
   registry:
     image: goharbor/registry-photon:v2.6.3
     container_name: registry
@@ -52,6 +54,7 @@ services:
         syslog-address: "tcp://localhost:1514"
         tag: "registry"
         mode: "non-blocking"
+
   registryctl:
     image: goharbor/harbor-registryctl:v2.6.3
     container_name: registryctl
@@ -83,6 +86,7 @@ services:
         syslog-address: "tcp://localhost:1514"
         tag: "registryctl"
         mode: "non-blocking"
+
   postgresql:
     image: goharbor/harbor-db:v2.6.3
     container_name: harbor-db
@@ -109,6 +113,7 @@ services:
         tag: "postgresql"
         mode: "non-blocking"
     shm_size: '1gb'
+
   core:
     image: goharbor/harbor-core:v2.6.3
     container_name: harbor-core
@@ -149,6 +154,7 @@ services:
         syslog-address: "tcp://localhost:1514"
         tag: "core"
         mode: "non-blocking"
+
   portal:
     image: goharbor/harbor-portal:v2.6.3
     container_name: harbor-portal
@@ -206,6 +212,7 @@ services:
         syslog-address: "tcp://localhost:1514"
         tag: "jobservice"
         mode: "non-blocking"
+
   redis:
     image: goharbor/redis-photon:v2.6.3
     container_name: redis
@@ -228,6 +235,7 @@ services:
         syslog-address: "tcp://localhost:1514"
         tag: "redis"
         mode: "non-blocking"
+
   proxy:
     image: goharbor/nginx-photon:v2.6.3
     container_name: nginx
