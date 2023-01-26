@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: portfoliocontainer
-          image: so2harbor.com:6000/library/portfolio:latest
+          image: localhost:6080/library/portfolio:latest
           ports:
             - containerPort: 8080
       imagePullSecrets:

@@ -51,6 +51,7 @@ services:
       options:
         syslog-address: "tcp://localhost:1514"
         tag: "registry"
+        mode: "non-blocking"
   registryctl:
     image: goharbor/harbor-registryctl:v2.6.3
     container_name: registryctl
@@ -81,6 +82,7 @@ services:
       options:
         syslog-address: "tcp://localhost:1514"
         tag: "registryctl"
+        mode: "non-blocking"
   postgresql:
     image: goharbor/harbor-db:v2.6.3
     container_name: harbor-db
@@ -105,6 +107,7 @@ services:
       options:
         syslog-address: "tcp://localhost:1514"
         tag: "postgresql"
+        mode: "non-blocking"
     shm_size: '1gb'
   core:
     image: goharbor/harbor-core:v2.6.3
@@ -145,6 +148,7 @@ services:
       options:
         syslog-address: "tcp://localhost:1514"
         tag: "core"
+        mode: "non-blocking"
   portal:
     image: goharbor/harbor-portal:v2.6.3
     container_name: harbor-portal
@@ -169,6 +173,7 @@ services:
       options:
         syslog-address: "tcp://localhost:1514"
         tag: "portal"
+        mode: "non-blocking"
 
   jobservice:
     image: goharbor/harbor-jobservice:v2.6.3
@@ -200,6 +205,7 @@ services:
       options:
         syslog-address: "tcp://localhost:1514"
         tag: "jobservice"
+        mode: "non-blocking"
   redis:
     image: goharbor/redis-photon:v2.6.3
     container_name: redis
@@ -221,6 +227,7 @@ services:
       options:
         syslog-address: "tcp://localhost:1514"
         tag: "redis"
+        mode: "non-blocking"
   proxy:
     image: goharbor/nginx-photon:v2.6.3
     container_name: nginx
@@ -253,6 +260,7 @@ services:
       options:
         syslog-address: "tcp://localhost:1514"
         tag: "proxy"
+        mode: "non-blocking"
 networks:
   harbor:
     external: false

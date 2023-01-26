@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: fastapicontainer
-          image: so2harbor.com:6000/library/fastapi:latest
+          image: localhost:6080/library/fastapi:latest
           ports:
             - containerPort: 3000
           env:

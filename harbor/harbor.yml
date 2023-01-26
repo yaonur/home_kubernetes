@@ -2,7 +2,7 @@
 
 # The IP address or hostname to access admin UI and registry service.
 # DO NOT use localhost or 127.0.0.1, because Harbor needs to be accessed by external clients.
-hostname: so2harbor.com
+hostname: so2homelab.com
 
 # http related config
 http:
@@ -10,12 +10,12 @@ http:
   port: 6080
 
 # https related config
-https:
-  # https port for harbor, default is 443
-  port: 6000
-  # The path of cert and key files for nginx
-  certificate: /data/cert/so2homelab.com/so2homelab.com.cert
-  private_key: /data/cert/so2homelab.com/so2homelab.com.key
+# https:
+#   # https port for harbor, default is 443
+#   port: 6000
+#   # The path of cert and key files for nginx
+#   certificate: /data/cert/so2homelab.com/so2homelab.com.cert
+#   private_key: /data/cert/so2homelab.com/so2homelab.com.key
 
 
 
@@ -28,7 +28,7 @@ https:
 
 # Uncomment external_url if you want to enable external proxy
 # And when it enabled the hostname will no longer used
-external_url: reg.so2homelab.com
+# external_url: reg.so2homelab.com
 
 # The initial password of Harbor admin
 # It only works in first time to install harbor
