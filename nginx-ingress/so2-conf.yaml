@@ -34,7 +34,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: webapp-service
+                name: band-front-service
                 port:
                   number: 80
 ---
@@ -55,7 +55,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: fastapi-service
+                name: band-api-service
                 port:
                   number: 5000
 #---
